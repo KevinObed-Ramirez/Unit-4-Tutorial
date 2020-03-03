@@ -5,8 +5,8 @@
    Tutorial 11
    Tutorial Case
 
-   Author: 
-   Date:   
+   Author: Kevin Ramirez
+   Date:   3-2-20
 
    Global Variables
    ================
@@ -54,8 +54,22 @@
 	
 */
 
+//This will run the init() when the page loads
+window.onload = init;
 
+function init(){
+   //insert title for the first puzzle 
+   document.getElementById("puzzleTitle").innerHTML = "Puzzle 1";
 
+   //Insert the html code for the first puzzle
+   document.getElementById("puzzle").innerHTML = drawPuzzle(puzzle1Hint,puzzle1Rating,puzzle1);
+
+   //adding event handlers for the puzzle
+   var puzzleButtons = document.getElementsByClassName("puzzles");
+   for(var i=0; i<puzzleButtons.length; i++){
+      puzzleButtons[i].onclick = swapPuzzle;
+   }
+}
 
 
 
